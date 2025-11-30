@@ -27,7 +27,6 @@
   position: absolute;
   top: 10px;
   right: 38px;
-  /*left: 304px;*/
   color: var(--decor-color);
   font-size: var(--font-size-base);
 }
@@ -35,13 +34,13 @@
 .header__decoration::after {
   content: '';
   position: absolute;
-  top: 12px;
-  left: 42px;
+  top: 8px;
+  right: -19px;
   width: 9px;
   height: 9px;
   background-color: var(--decor-color);
   border-radius: 50%;
-  transform: translateY(-50%);
+  box-shadow: 0 0 4px 2px var(--decor-color);
 }
 
 .header__theme-menu {
@@ -99,7 +98,7 @@
   color: var(--title-color);
   font-size: var(--font-size-mobile);
   margin-left: 0;
-  font-weight: Bold;
+  font-weight: 700;
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
@@ -240,6 +239,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: var(--background-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -263,8 +263,7 @@
   
   .header__decoration {
     top: 20px;
-    /*left: 690px;*/
-    right: 51px;
+    right: 48px;
   }
   
   .header__theme-menu {
@@ -283,7 +282,6 @@
   .decorated-zone::before {
     top: 20px;
     right: 20px;
-    /*left: 728px;*/
   }
 
   .decorated-zone::after {
@@ -292,7 +290,7 @@
   }
   
   .main {
-    padding: 60px 0;
+    padding: 60px 20px;
     gap: 80px;
   }
   
@@ -300,7 +298,6 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
-    padding: 0px 20px;
   }
 
   .section:nth-child(2) {
@@ -312,10 +309,6 @@
   .section:nth-child(2) .section__title {
     width: 236px;
     height: 70px;
-  }
-
-  .gallery {
-    padding: 0px 20px;
   }
 
   .gallery .article__title {
@@ -357,7 +350,13 @@
 /* Десктопная версия */
 @media (width >= 1024px) {
   .header {
+    padding: 20px;
     min-height: 768px;
+  }
+
+  .header__decoration {
+    top: 20px;
+    right: 48px;
   }
 
   .header__theme-menu {
@@ -428,6 +427,11 @@
   }
 
   .footer {
-    min-height: 100vh; /* Добавлено для десктопной версии */
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .footer__title {
+    font-size: var(--font-size-desktop);
   }
 }
