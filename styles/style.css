@@ -5,6 +5,7 @@
   font-family: var(--main-font);
   font-size: var(--font-size-base);
   line-height: 23.4px;
+  background-attachment: fixed;
 }
 
 /* Шапка Mobile First */
@@ -19,6 +20,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .header__decoration {
@@ -239,6 +241,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .footer__title {
@@ -247,39 +250,6 @@
   font-weight: 700;
   line-height: 0.825;
   text-shadow: 2px 2px 0 var(--accent-color);
-}
-
-/* Стили для кнопок темы */
-.header__theme-menu-button:hover {
-  border-color: var(--button-hover);
-  cursor: pointer;
-}
-
-.header__theme-menu-button:focus {
-  outline: none;
-}
-
-.header__theme-menu-button:focus-visible {
-  border-bottom-color: var(--button-color);
-  outline: none;
-}
-
-.header__theme-menu-button_active {
-  border-color: var(--button-color);
-  pointer-events: none;
-}
-
-/* Стили для ссылок в тексте */
-.link:hover {
-  border-bottom: 1px solid currentColor;
-}
-
-.link:focus {
-  outline: none;
-}
-
-.link:focus-visible {
-  outline: 1px solid currentColor;
 }
 
 /* Планшетная версия */
@@ -424,7 +394,7 @@
     gap: 80px;
   }
   
-  .section:nth-child(2) .section__content{
+  .section:nth-child(2) .section__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
