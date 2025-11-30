@@ -1,5 +1,474 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* style.css */
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color);
+  color: var(--button-color);
+  font-family: var(--main-font);
+  font-size: var(--font-size-base);
+  line-height: 23.4px;
+}
+
+/* Шапка Mobile First */
+.header {
+  position: relative;
+  padding: 10px;
+  min-height: 648px; /* 668 - 10*2 padding */
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header__decoration {
+  position: absolute;
+  top: 10px;
+  right: 39px;
+  /*left: 304px;*/
+  color: var(--decor-color);
+  font-size: var(--font-size-base);
+}
+
+.header__decoration::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 42px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--decor-color);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--menu-color);
+}
+
+.header__theme-menu-item {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 2px 13px;
+  background: transparent;
+  cursor: pointer;
+  text-transform: lowercase;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: var(--menu-color);
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--button-hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom-color: var(--button-color);
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--button-color);
+  pointer-events: none;
+}
+
+.header__title {
+  color: var(--title-color);
+  font-size: var(--font-size-mobile);
+  font-weight: Bold;
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__content {
+  justify-self: end;
+  max-width: 355px;
+}
+
+.header__text {
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+/* Декоративные уголки */
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+}
+
+/* Основной контент Mobile First */
+.main {
+  padding: 40px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--block-gap);
+}
+
+.section__title {
+  font-size: inherit;
+  font-weight: 700;
+  color: var(--section-title-color);
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--element-gap);
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article__title {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.article__text {
+  font-family: var(--main-font, 'IBM Plex Mono', monospace) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 18px !important;
+  line-height: 23.4px !important;
+  color: var(--article-text-color);
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+/* Галерея Mobile First */
+.gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery__title {
+  margin-bottom: 10px;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery .article__title {
+  margin-bottom: 10px;
+}
+
+/* Футер Mobile First */
+.footer {
+  position: relative;
+  padding: 10px;
+  min-height: 648px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer__title {
+  color: var(--title-color);
+  font-size: var(--font-size-mobile);
+  font-weight: 700;
+  line-height: 0.825;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+/* Стили для кнопок темы */
+.header__theme-menu-button:hover {
+  border-color: var(--button-hover);
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom-color: var(--button-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--button-color);
+  pointer-events: none;
+}
+
+/* Стили для ссылок в тексте */
+.link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+/* Планшетная версия */
+@media (768px <= width < 1024px) {
+  .header {
+    padding: 20px;
+    min-height: 1024px;
+  }
+  
+  .header__decoration {
+    top: 20px;
+    /*left: 690px;*/
+    right: 51px;
+  }
+  
+  .header__theme-menu {
+    margin-top: 170px;
+  }
+  
+  .header__title {
+    font-size: var(--font-size-desktop);
+    margin-left: -20px;
+  }
+  
+  .header__content {
+    max-width: 364px;
+  }
+  
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+    /*left: 728px;*/
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .main {
+    padding: 60px 0;
+    gap: 80px;
+  }
+  
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 0px 20px;
+  }
+
+  .section:nth-child(2) {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+  }
+
+  .section:nth-child(2) .section__title {
+    width: 236px;
+    height: 70px;
+  }
+
+  .gallery {
+    padding: 0px 20px;
+  }
+
+  .gallery .article__title {
+  margin-bottom: 20px;
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+  
+  .gallery__item:nth-child(1) {
+    grid-column: span 2;
+  }
+  
+  .gallery__item:nth-child(2) {
+    grid-row: span 2;
+  }
+  
+  .gallery__item:nth-child(3) {
+    grid-row: span 2;
+  }
+  
+  .gallery__item:nth-child(5) {
+    grid-column: span 2;
+  }
+  
+  .footer {
+    padding: 20px;
+    min-height: 1024px;
+  }
+  
+  .footer__title {
+    font-size: var(--font-size-desktop);
+  }
+}
+
+/* Десктопная версия */
+@media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+  }
+
+  .header__decoration {
+    top: 20px;
+    /*left: 690px;*/
+    right: 51px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+    /*left: 728px;*/
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-top: 10px;
+  }
+  
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  
+  .header__content {
+    max-width: 491px;
+  }
+
+  .main {
+    padding: 40px 20px;
+    gap: 80px;
+  }
+  
+  .section:nth-child(2) .section__content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section:nth-child(1),
+  .section:nth-child(3) {
+    display: grid;
+    grid-template-columns: 315px 1fr;
+    gap: 20px;
+  }
+  
+  .section:nth-child(1) .section__title,
+  .section:nth-child(3) .section__title {
+    width: 315px;
+  }
+
+  .gallery .article__title {
+  margin-bottom: 20px;
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+  
+  .gallery__item:nth-child(1) {
+    grid-column: span 2;
+  }
+  
+  .gallery__item:nth-child(2) {
+    grid-row: span 2;
+  }
+  
+  .gallery__item:nth-child(3) {
+    grid-row: span 2;
+  }
+  
+  .gallery__item:nth-child(5) {
+    grid-column: span 2;
+  }
+  
+  .footer {
+    min-height: 768px;
+  }
 }

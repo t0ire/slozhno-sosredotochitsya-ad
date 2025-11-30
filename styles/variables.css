@@ -1,4 +1,43 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+/* variables.css */
+:root {
+  /* Основные цвета (тема по умолчанию - светлая) */
+  --bg-color: #fff1f7;
+  --text-color: #353430;
+  --accent-color: #ff8dcb;
+  --title-color: #ffc2e6;
+  --decor-color: #353430;
+  --button-color: #353430;
+  --button-hover: rgba(50, 49, 45, 0.4);
+  --section-title-color: #353430;
+  --article-text-color: #353430;
+  --menu-color: #353430;
+  --background-image: url('../images/cover-image-light.png');
+  
+  /* Отступы */
+  --section-gap: 50px;
+  --block-gap: 20px;
+  --element-gap: 20px;
+  
+  /* Шрифты */
+  --main-font: 'IBM Plex Mono', monospace;
+  --font-size-base: 18px;
+  --font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --font-size-desktop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+}
+
+/* Автоматическая тема - зависит от системных настроек */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000028;
+    --text-color: #F1B2CE;
+    --accent-color: #ff0070;
+    --title-color: #db00ff;
+    --decor-color: #ff0070;
+    --button-color: #FF0070;
+    --button-hover: rgba(255, 0, 112, 0.4);
+    --section-title-color: #FF0070;
+    --article-text-color: #F1B2CE;
+    --menu-color: #FF0070;
+    --background-image: url('../images/cover-image-dark.png');
+  }
+}

@@ -1,5 +1,4 @@
-/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
-
+/* globals.css */
 *,
 *::before,
 *::after {
@@ -39,4 +38,12 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  background: transparent;
+  border: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
