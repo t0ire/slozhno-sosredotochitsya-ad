@@ -26,7 +26,7 @@
 .header__decoration {
   position: absolute;
   top: 10px;
-  right: 39px;
+  right: 38px;
   /*left: 304px;*/
   color: var(--decor-color);
   font-size: var(--font-size-base);
@@ -46,6 +46,7 @@
 
 .header__theme-menu {
   justify-self: end;
+  margin-top: 65px;
 }
 
 .header__theme-menu-list {
@@ -97,6 +98,7 @@
 .header__title {
   color: var(--title-color);
   font-size: var(--font-size-mobile);
+  margin-left: 0;
   font-weight: Bold;
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -104,7 +106,7 @@
 
 .header__content {
   justify-self: end;
-  max-width: 355px;
+  max-width: 100%;
 }
 
 .header__text {
@@ -358,31 +360,19 @@
     min-height: 768px;
   }
 
-  .header__decoration {
-    top: 20px;
-    /*left: 690px;*/
-    right: 51px;
-  }
-
-  .decorated-zone::before {
-    top: 20px;
-    right: 20px;
-    /*left: 728px;*/
-  }
-
-  .decorated-zone::after {
-    bottom: 20px;
-    left: 20px;
-  }
-  
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    margin-top: 10px;
+    margin-top: 0;
   }
   
   .header__theme-menu-list {
     flex-direction: row;
+    gap: 10px;
+  }
+  
+  .header__title {
+    text-shadow: 4px 4px 0 #FF0070;
   }
   
   .header__content {
@@ -390,16 +380,18 @@
   }
 
   .main {
-    padding: 40px 20px;
+    padding: 60px 20px;
     gap: 80px;
   }
   
+  /* Секция 2 - 3 колонки */
   .section:nth-child(2) .section__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-
+  
+  /* Секции 1 и 3 - фиксированная ширина заголовка */
   .section:nth-child(1),
   .section:nth-child(3) {
     display: grid;
@@ -411,11 +403,8 @@
   .section:nth-child(3) .section__title {
     width: 315px;
   }
-
-  .gallery .article__title {
-  margin-bottom: 20px;
-  }
-
+  
+  /* Галерея */
   .gallery__grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
@@ -436,9 +425,5 @@
   
   .gallery__item:nth-child(5) {
     grid-column: span 2;
-  }
-  
-  .footer {
-    min-height: 768px;
   }
 }

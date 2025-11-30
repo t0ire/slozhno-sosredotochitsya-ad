@@ -2,9 +2,9 @@
 :root.theme-dark {
   --bg-color: #000028;
   --text-color: #F1B2CE;
-  --accent-color: #ff0070;
-  --title-color: #db00ff;
-  --decor-color: #ff0070;
+  --accent-color: #FF0070;
+  --title-color: #DB00FF;
+  --decor-color: #FF0070;
   --button-color: #FF0070;
   --button-hover: rgba(255, 0, 112, 0.4);
   --section-title-color: #FF0070;
@@ -12,7 +12,6 @@
   --menu-color: #FF0070;
   --background-image: url('../images/cover-image-dark.png');
 }
-
 .theme-dark .header__decoration {
   color: var(--decor-color);
 }
