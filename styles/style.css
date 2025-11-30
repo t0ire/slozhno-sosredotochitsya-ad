@@ -236,7 +236,7 @@
 .footer {
   position: relative;
   padding: 10px;
-  min-height: 648px;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -346,7 +346,7 @@
   
   .footer {
     padding: 20px;
-    min-height: 1024px;
+    min-height: 100vh;
   }
   
   .footer__title {
@@ -425,5 +425,9 @@
   
   .gallery__item:nth-child(5) {
     grid-column: span 2;
+  }
+
+  .footer {
+    min-height: 100vh; /* Добавлено для десктопной версии */
   }
 }
