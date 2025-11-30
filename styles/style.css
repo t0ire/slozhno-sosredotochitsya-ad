@@ -12,7 +12,7 @@
 .header {
   position: relative;
   padding: 10px;
-  min-height: 648px; /* 668 - 10*2 padding */
+  min-height: 668px; /* 668 - 10*2 padding */
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
@@ -45,7 +45,6 @@
 
 .header__theme-menu {
   justify-self: end;
-  margin-top: 65px;
 }
 
 .header__theme-menu-list {
