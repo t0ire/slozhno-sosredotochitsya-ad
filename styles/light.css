@@ -13,27 +13,7 @@
   --background-image: url('../images/cover-image-light.png');
 }
 
+/* Особенности светлой темы */
 .theme-light .header__decoration {
   display: none;
-}
-
-/* Для автоматической темы, если пользователь предпочитает светлую тему */
-@media (prefers-color-scheme: light) {
-  :root.theme-auto {
-    --bg-color: #fff1f7;
-    --text-color: #353430;
-    --accent-color: #ff8dcb;
-    --title-color: #ffc2e6;
-    --decor-color: #353430;
-    --button-color: #353430;
-    --button-hover: rgba(50, 49, 45, 0.4);
-    --section-title-color: #353430;
-    --article-text-color: #353430;
-    --menu-color: #353430;
-    --background-image: url('../images/cover-image-light.png');
-  }
-  
-  .theme-auto .header__decoration {
-    display: none;
-  }
 }

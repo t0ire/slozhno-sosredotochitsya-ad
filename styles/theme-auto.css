@@ -1,0 +1,51 @@
+/* theme-auto.css */
+
+/* Если ОС использует тёмную тему */
+@media (prefers-color-scheme: dark) {
+  :root.theme-auto {
+    --bg-color: #000028;
+    --text-color: #F1B2CE;
+    --accent-color: #FF0070;
+    --title-color: #DB00FF;
+    --decor-color: #FF0070;
+    --button-color: #FF0070;
+    --button-hover: rgba(255, 0, 112, 0.4);
+    --section-title-color: #FF0070;
+    --article-text-color: #F1B2CE;
+    --menu-color: #FF0070;
+    --background-image: url('../images/cover-image-dark.png');
+  }
+
+  .theme-auto .header__decoration {
+    color: var(--decor-color);
+  }
+
+  .theme-auto .header__decoration::after {
+    background-color: var(--decor-color);
+  }
+
+  .theme-auto .title-decor {
+    color: #000028;
+  }
+}
+
+/* Если ОС использует светлую тему */
+@media (prefers-color-scheme: light) {
+  :root.theme-auto {
+    --bg-color: #fff1f7;
+    --text-color: #353430;
+    --accent-color: #ff8dcb;
+    --title-color: #ffc2e6;
+    --decor-color: #353430;
+    --button-color: #353430;
+    --button-hover: rgba(50, 49, 45, 0.4);
+    --section-title-color: #353430;
+    --article-text-color: #353430;
+    --menu-color: #353430;
+    --background-image: url('../images/cover-image-light.png');
+  }
+
+  .theme-auto .header__decoration {
+    display: none;
+  }
+}
